@@ -21,12 +21,10 @@ jobs:
         run: npm install
 
       - name: Tạo file .env từ secret
-        run: echo "VITE_API_KEY=${{ secrets.MY_SECRET_KEY }}" > .env
+        run: echo "VITE_BASE_URL=${{ secrets.MY_SECRET_KEY }}" > .env
 
       - name: Build
-        run: |
-          echo "VITE_API_KEY=${{ secrets.MY_SECRET_KEY }}" >> .env
-          npm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
