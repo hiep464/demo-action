@@ -12,9 +12,6 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: Kiểm tra secret
-        run: echo "Secret (masked): ${{ secrets.MY_SECRET_KEY }}"
-
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -22,6 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+
+      - name: Kiểm tra secret
+        run: echo "Secret (masked): ${{ secrets.MY_SECRET_KEY }}"
 
       - name: Install dependencies
         run: npm install
