@@ -12,6 +12,9 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     steps:
+      - name: Kiểm tra secret
+        run: echo "Secret (masked): ${{ secrets.MY_SECRET_KEY }}"
+
       - name: Checkout code
         uses: actions/checkout@v4
 
