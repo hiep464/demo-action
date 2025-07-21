@@ -21,7 +21,7 @@ jobs:
           node-version: 18
 
       - name: check secret
-        run: echo "Secret (masked): ${{ secrets.MY_SECRET_KEY }}"
+        run: echo 'Secret (masked): ${{ secrets.MY_SECRET_KEY }}'
 
       - name: Install dependencies
         run: npm install
